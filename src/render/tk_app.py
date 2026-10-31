@@ -3,9 +3,9 @@ The window only drives the simulation controller and draws snapshots of the simu
 """
 
 import time
-from citysim.sim.controller import SimulationController
-from citysim.render.scene import RenderOptions, SceneRenderer
-from citysim.render.surface import TkSurface
+from src.sim.controller import SimulationController
+from src.render.scene import RenderOptions, SceneRenderer
+from src.render.surface import TkSurface
 
 SPEED_STEPS = [0.5, 1, 2, 5, 10, 20, 50, 100, 200, 500, 1000]
 

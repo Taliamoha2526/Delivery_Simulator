@@ -8,8 +8,8 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from typing import Callable
 import heapq
-from citysim.city.network import EdgeKey, RoadNetwork
-from citysim.registry import Registry
+from src.city.network import EdgeKey, RoadNetwork
+from src.registry import Registry
 
 ROUTERS = Registry("router")
 

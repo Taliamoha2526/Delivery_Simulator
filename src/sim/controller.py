@@ -4,7 +4,7 @@ The controller decides when steps happen:
 """
 
 from typing import Callable
-from citysim.sim.simulation import Simulation
+from src.sim.simulation import Simulation
 
 class SimulationController:
     # To stop a slow frame from snowballing into an ever longer one

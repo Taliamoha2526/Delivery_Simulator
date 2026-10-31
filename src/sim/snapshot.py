@@ -5,10 +5,10 @@ A snapshot is plain data so a renderer cannot manipulate the simulation details.
 
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING
-from citysim.city.geometry import Axis
+from src.city.geometry import Axis
 
 if TYPE_CHECKING:
-    from citysim.sim.simulation import Simulation
+    from src.sim.simulation import Simulation
 
 
 @dataclass(frozen=True)

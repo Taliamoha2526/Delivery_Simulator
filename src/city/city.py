@@ -18,10 +18,10 @@ Drivers pick up and drop off at access nodes (intersection at the corner of a bl
 
 from dataclasses import dataclass
 from enum import Enum
-from citysim.config import CityConfig, TrafficConfig
-from citysim.city.geometry import Direction
-from citysim.city.network import Intersection, Road, RoadNetwork
-from citysim.rng import RandomStreams
+from src.config import CityConfig, TrafficConfig
+from src.city.geometry import Direction
+from src.city.network import Intersection, Road, RoadNetwork
+from src.rng import RandomStreams
 
 # A block is represented by its column, row
 Block = tuple[int, int]

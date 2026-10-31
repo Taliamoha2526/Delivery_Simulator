@@ -2,12 +2,12 @@
 
 from abc import ABC, abstractmethod
 from typing import TYPE_CHECKING, Sequence
-from citysim.agents.car import Driver
-from citysim.registry import Registry
-from citysim.delivery.request import Request
+from src.agents.car import Driver
+from src.registry import Registry
+from src.delivery.request import Request
 
 if TYPE_CHECKING:
-    from citysim.sim.simulation import Simulation
+    from src.sim.simulation import Simulation
 
 DISPATCHERS = Registry("dispatcher")
 

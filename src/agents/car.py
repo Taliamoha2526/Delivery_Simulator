@@ -5,8 +5,8 @@ Driver: the logic behind moving the car through intersection & routing.
 
 from dataclasses import dataclass, field
 from enum import Enum
-from citysim.city.geometry import Direction
-from citysim.city.network import EdgeKey
+from src.city.geometry import Direction
+from src.city.network import EdgeKey
 
 class MovementState(str, Enum):
     PARKED = "PARKED"

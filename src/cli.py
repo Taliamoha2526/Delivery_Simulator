@@ -1,11 +1,11 @@
 import argparse
 import json
 import sys
-from citysim.config import ConfigError, SimConfig
-from citysim.sim.controller import SimulationController
-from citysim.sim.simulation import Simulation
-from citysim.render.save_frame import save_frame
-from citysim.render.tk_app import launch
+from src.config import ConfigError, SimConfig
+from src.sim.controller import SimulationController
+from src.sim.simulation import Simulation
+from src.render.save_frame import save_frame
+from src.render.tk_app import launch
 
 
 SHORTCUTS = {"seed": "simulation.seed", "duration": "simulation.duration", "dt": "simulation.dt",

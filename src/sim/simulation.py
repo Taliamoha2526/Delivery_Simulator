@@ -4,19 +4,19 @@ It has no dependency on the renderer, and runs headlessly as fast as Python allo
 """
 
 from typing import Callable
-from citysim.agents.fleet import Fleet
-from citysim.city.city import City, build_city
-from citysim.sim.clock import SimClock
-from citysim.config import SimConfig
-from citysim.delivery.dispatch import DISPATCHERS, Dispatcher
-from citysim.delivery.system import DeliverySystem
-from citysim.sim.events import Event, EventBus
-from citysim.agents.generators import (EVENT_GENERATORS, REQUEST_GENERATORS, EventGenerator,GenerationContext, RequestGenerator)
-from citysim.sim.events import Metrics
-from citysim.rng import RandomStreams
-from citysim.delivery.routing import ROUTERS, Router, RoutingContext
-from citysim.sim.snapshot import SimSnapshot, build_snapshot
-from citysim.city.engine import TrafficEngine, TrafficLightSystem
+from src.agents.fleet import Fleet
+from src.city.city import City, build_city
+from src.sim.clock import SimClock
+from src.config import SimConfig
+from src.delivery.dispatch import DISPATCHERS, Dispatcher
+from src.delivery.system import DeliverySystem
+from src.sim.events import Event, EventBus
+from src.agents.generators import (EVENT_GENERATORS, REQUEST_GENERATORS, EventGenerator, GenerationContext, RequestGenerator)
+from src.sim.events import Metrics
+from src.rng import RandomStreams
+from src.delivery.routing import ROUTERS, Router, RoutingContext
+from src.sim.snapshot import SimSnapshot, build_snapshot
+from src.city.engine import TrafficEngine, TrafficLightSystem
 
 
 class Simulation:

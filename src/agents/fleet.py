@@ -1,7 +1,7 @@
 """The set of drivers (each with a car)."""
 import random
-from citysim.city.network import RoadNetwork
-from citysim.agents.car import Car, Driver
+from src.city.network import RoadNetwork
+from src.agents.car import Car, Driver
 
 class Fleet:
     def __init__(self, drivers: list[Driver]):

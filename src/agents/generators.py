@@ -7,13 +7,13 @@ import random
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
-from citysim.city.city import City
-from citysim.registry import Registry
-from citysim.config import RequestsConfig
-from citysim.rng import poisson
+from src.city.city import City
+from src.registry import Registry
+from src.config import RequestsConfig
+from src.rng import poisson
 
 if TYPE_CHECKING:
-    from citysim.sim.simulation import Simulation
+    from src.sim.simulation import Simulation
 
 REQUEST_GENERATORS = Registry("request generator")
 EVENT_GENERATORS = Registry("event generator")

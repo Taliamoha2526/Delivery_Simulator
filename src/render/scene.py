@@ -1,10 +1,10 @@
 """Scene renderer: turns the static city and a snapshot into drawing calls."""
 
 from dataclasses import dataclass
-from citysim.city.city import City
-from citysim.city.city import Direction
-from citysim.sim.snapshot import CarView, SimSnapshot
-from citysim.render.surface import Surface
+from src.city.city import City
+from src.city.city import Direction
+from src.sim.snapshot import CarView, SimSnapshot
+from src.render.surface import Surface
 
 # Palette configuration
 LAWN = "#dfe6d6"

@@ -10,10 +10,10 @@ the engine moves it along the roads and enforces the physical rules:
 """
 
 from dataclasses import dataclass
-from citysim.agents.car import Car, MovementState
-from citysim.city.network import EdgeKey, RoadNetwork
-from citysim.config import TrafficConfig
-from citysim.city.lights import TrafficLightSystem
+from src.agents.car import Car, MovementState
+from src.city.network import EdgeKey, RoadNetwork
+from src.config import TrafficConfig
+from src.city.lights import TrafficLightSystem
 
 _EPS = 1e-9
 

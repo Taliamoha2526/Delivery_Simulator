@@ -11,10 +11,10 @@ TrafficLightSystem owns one controller per intersection and answers for the vehi
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from enum import Enum
-from citysim.city.geometry import Axis
-from citysim.city.network import RoadNetwork
-from citysim.config import TrafficConfig
-from citysim.registry import Registry
+from src.city.geometry import Axis
+from src.city.network import RoadNetwork
+from src.config import TrafficConfig
+from src.registry import Registry
 
 
 class LightColor(str, Enum):

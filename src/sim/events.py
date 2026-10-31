@@ -44,7 +44,7 @@ class EventBus:
         return event
 
 if TYPE_CHECKING:   # pragma: no cover
-    from citysim.sim.simulation import Simulation
+    from src.sim.simulation import Simulation
 
 @dataclass
 class DeliveryRecord:

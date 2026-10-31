@@ -4,7 +4,7 @@ Every street between two neighbouring intersections is two way.
 """
 
 from dataclasses import dataclass
-from citysim.city.geometry import Direction
+from src.city.geometry import Direction
 
 # Edge is represented by start intersection id, end intersection id
 EdgeKey = tuple[int, int]

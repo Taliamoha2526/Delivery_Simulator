@@ -6,11 +6,11 @@ Handles:
 - Delivery
 """
 
-from citysim.agents.car import Assignment, AssignmentPhase, Driver
-from citysim.city.city import City
-from citysim.sim.events import EventBus, EventType
-from citysim.agents.generators import RequestSpec
-from citysim.delivery.request import Request, RequestStatus
+from src.agents.car import Assignment, AssignmentPhase, Driver
+from src.city.city import City
+from src.sim.events import EventBus, EventType
+from src.agents.generators import RequestSpec
+from src.delivery.request import Request, RequestStatus
 
 
 class DeliverySystem:
