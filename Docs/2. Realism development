@@ -1,0 +1,139 @@
+# Realism & Scenario Development
+
+### Moving Beyond the Basic Grid
+
+The first version of the simulator used a simple grid city.
+
+It was useful for getting the delivery system working, but it also exposed a limitation:
+
+when every part of the city behaves similarly, there is only so much that can happen within the environment.
+
+If the purpose of the project is to model real world delivery systems, the environment itself needs to provide meaningful differences.
+
+This led to the next stage of development:
+
+making the simulated city more representative of how a real urban environment is structured.
+
+The objective is not to reproduce an actual city map.
+
+Instead, the model should contain enough variation for location, infrastructure, and surrounding conditions to influence what happens during a simulation.
+
+### Making the Map More Meaningful
+
+The city has been extended beyond uniform residential blocks.
+
+Different areas can now contain different types of spaces, including empty plots, terrain features, and blocked areas.
+
+Roads and intersections form the connected network through which vehicles move, while barriers and terrain can constrain how the city is laid out.
+
+Connectivity is also treated as a constraint.
+
+The generated environment must remain usable as a road network rather than randomly creating isolated sections that cannot participate in the delivery system.
+
+A separate layout seed allows the structure of the city to change without changing the underlying demand conditions.
+
+This creates another dimension for experimentation:
+
+the same delivery system can be tested against different environments.
+
+The important idea is that geography becomes part of the simulation rather than simply being a visual background.
+
+### Why the Environment Matters
+
+Adding realism is not primarily about making the simulator look more convincing.
+
+The structure of the environment determines what kinds of situations can occur.
+
+This creates a foundation for modelling events that would make little sense in a completely uniform grid.
+
+For example, a road obstruction can affect several routes.
+
+An accident can create a local disruption that propagates through nearby traffic.
+
+A high demand area can place additional pressure on the fleet.
+
+A temporary closure can force vehicles to reconsider their routes.
+
+The environment therefore becomes part of the causal structure of the simulation.
+
+### Developing Real World Events
+
+The next direction is to introduce events and operating conditions that represent disruptions found in real delivery systems.
+
+Some possibilities include:
+
+- Accidents and temporary road blockages
+
+- Road closures or construction
+
+- Congestion and changing traffic conditions
+
+- Sudden increases or decreases in delivery demand
+
+- Delayed or failed deliveries
+
+- Driver breaks or temporary unavailability
+
+- Unusual events affecting particular areas
+
+- Weather related disruptions
+
+These ideas are still under development.
+
+The goal is not to add randomness for its own sake, but to think about which events would actually change the behaviour of the delivery system and how they should be represented.
+
+An event should have consequences within the world.
+
+A blocked road should affect movement.
+
+A sudden demand increase should affect fleet availability.
+
+A disruption in one location should potentially create secondary effects elsewhere.
+
+### From Static Scenarios to Dynamic Systems
+
+This stage changes the type of questions the simulator can support.
+
+Instead of only asking which routing or dispatch strategy performs best under normal conditions,
+
+I can begin asking how strategies behave when the environment changes around them.
+
+For example:
+
+- **What happens when the usual route becomes unavailable?**
+
+- **How does a dispatch strategy respond when demand suddenly increases?**
+
+- **Where does congestion emerge after an accident?**
+
+- **Does a decision that looks efficient locally create a problem later?**
+
+These are the kinds of scenarios that make the simulation useful as an experimental model of a system rather than simply a visualization of one.
+
+### Where This Is Going
+
+The goal is to keep increasing the richness of the world while keeping its components understandable and replaceable.
+
+That means developing the city, traffic, events, demand, routing and dispatching as separate systems that can evolve independently.
+
+Some future ideas are already clear, while others will emerge from experimenting with the current version.
+
+The project is deliberately being developed in this order:
+
+First build a functioning world;
+
+then make the world more representative;
+
+then introduce increasingly complex situations;
+
+and finally use that environment to investigate different approaches to decision-making.
+
+The interesting question is not simply whether the simulation can imitate reality.
+
+It is whether a carefully constructed model can help reveal:
+
+- **How the system behaves?**
+
+- **Where it breaks down?**
+
+- **What happens when we change the decisions made inside it?**

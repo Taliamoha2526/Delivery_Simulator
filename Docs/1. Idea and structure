@@ -1,0 +1,165 @@
+Concept & Design Philosophy
+
+### The Idea
+
+The City Delivery Simulator started from a broader interest in using code to model systems that exist in the real world.
+
+Rather than building a program around a single input and output;
+
+the idea is to create a small world containing different elements, rules, constraints, and interactions;
+
+then observe what happens when the system runs.
+
+This makes it possible to ask questions that are difficult to answer by looking at individual components in isolation:
+
+- **Where do bottlenecks emerge?**
+
+- **How does a change in one part affect another?**
+
+- **What happens when conditions change?**
+
+- **How do decisions create consequences later in the system?**
+
+A delivery operation is a useful system to explore because it naturally contains many interacting components.
+
+A request has to be generated, assigned to a driver, picked up, routed through a road network, and delivered.
+
+Meanwhile, drivers, vehicles, traffic lights, roads, demand and other conditions all influence the process.
+
+The project therefore models a simplified delivery operation inside a simulated city.
+
+The purpose is not to reproduce a particular company or real city accurately.
+
+Instead, the simulation provides a controlled environment where assumptions can be made explicit, changed, and tested.
+
+### Translating the Real World into Code
+
+The first step is to break the system into elements that can be represented computationally.
+
+The city provides the physical environment:
+
+Roads, intersections, buildings, traffic infrastructure and terrain.
+
+Vehicles and drivers operate within that environment.
+
+Delivery requests create work for the fleet.
+
+Routing determines how vehicles move between locations, while dispatching determines which driver handles which request.
+
+These elements are connected rather than independent.
+
+The layout of the city influences available routes.
+
+Routes influence travel distance and time.
+
+Traffic conditions affect movement.
+
+The number and location of requests affect driver availability.
+
+Dispatching decisions influence which requests are served and when.
+
+The result is a system where the behaviour of the whole operation emerges from interactions between its parts.
+
+This is the part of the project that interests me most:
+
+turning a real world process into a set of interacting rules and then observing the behaviour produced by those rules.
+
+### Why Modularity Matters
+
+Because the project is an experimental environment, I do not want the rules of the world to be permanently tied to one implementation.
+
+Different components therefore have defined responsibilities and can be replaced independently.
+
+For example, the simulation can use different:
+
+- **Dispatchers** — how waiting requests are matched with available drivers.
+
+- **Routers** — how vehicles choose paths through the road network.
+
+- **Request generators** — how and when delivery demand appears.
+
+- **Event generators** — what external conditions or disruptions occur.
+
+- **City configurations** — how the environment is structured.
+
+- **Traffic configurations** — how movement and signals behave.
+
+These strategies are selected through configuration and registries rather than being hard coded into the simulation loop.
+
+This separation is important because it turns the simulator into more than one implementation of a delivery system.
+
+It becomes a framework for comparing different assumptions and decision-making approaches within the same environment.
+
+### Controlled Experimentation
+
+A major requirement of the project is that experiments should be comparable.
+
+The simulator uses seeded random streams so that different strategies can be tested under the same underlying conditions.
+
+For example, changing the dispatcher should not silently change which delivery requests were generated.
+
+This makes it possible to compare strategies while holding the environment constant;
+
+then repeat the experiment across multiple seeds to see whether an observed result is consistent.
+
+The project therefore sits somewhere between software and an experimental model:
+
+the code builds the world, while the experiments are used to investigate how that world behaves.
+
+### Why I Built It
+
+The idea came from something I naturally find myself doing when I encounter systems in everyday life:
+
+I start wondering how they actually work underneath what I can see.
+
+I might look at a delivery operation and think:
+
+How is this organized?
+
+What does it actually consist of?
+
+How do the different parts coordinate?
+
+What happens when one part changes?
+
+From there, I can start breaking the system down into things I can represent in code;
+
+the environment, the actors, the rules, the decisions, and the interactions between them.
+
+That is what led me to build this simulator.
+
+I wanted to take something I could observe in the real world and turn it into a functioning model rather than just think about it abstractly.
+
+But getting the model to work is only the first step.
+
+Once I have a functioning system, the more interesting question becomes:
+
+how close is this model to the behaviour I am actually trying to understand?
+
+That pushes the project toward greater realism.
+
+I can examine what is missing, add the constraints and interactions that matter.
+
+Then introduce situations that occur in the real system, and see whether the model begins to produce behaviour that makes sense.
+
+The process becomes a cycle:
+
+observe something → break it down → model it → make it work → compare it with reality → refine the model → experiment.
+
+That is ultimately why I built this project.
+
+I want to use programming as a way of turning things I notice in the world into systems I can inspect, change, and learn from.
+
+### What I Want to Learn From It
+
+The initial implementation provides the basic environment needed to start asking these questions.
+
+The longer-term direction is to explore how delivery systems behave under different operating conditions;
+
+where their bottlenecks emerge, and how different decisions affect the eventual outcome.
+
+This could eventually include heuristic strategies, optimization methods, reinforcement learning, or other decision-making approaches.
+
+But the environment comes first.
+
+The goal is to build a world with enough structure and control that different ideas can be tested inside it rather than discussed only in the abstract.
